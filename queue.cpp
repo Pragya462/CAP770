@@ -30,8 +30,18 @@ class Queue
         }
         else
         {
+            int temp;
             front++;
-            int temp = arr[front];
+            if(front == rear)
+            {
+                temp = arr[front];
+                front = rear = -1;
+            }
+            else
+            {
+                temp = arr[front];
+            }
+
             cout<<"Value deleted is: "<<temp<<endl;
         }
     }
@@ -53,10 +63,20 @@ int main()
     obj.enqueue(10);
     obj.enqueue(20);
     obj.enqueue(30);
+    obj.enqueue(40);
+    obj.enqueue(50);
+    obj.enqueue(60);
     obj.display();
     obj.dequeue();
     obj.dequeue();
     obj.dequeue();
     obj.dequeue();
+    obj.dequeue();
+    obj.enqueue(10);
+    obj.enqueue(20);
+    obj.enqueue(30);
+    obj.enqueue(40);
+    obj.enqueue(50);
+    obj.enqueue(60);
     obj.display();
 }
